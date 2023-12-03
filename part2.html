@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"> </script>
+</head>
+<body>
+    
+    <div id="app">
+        <ul>
+            <li v-for="fruit in fruits">{{ fruit }}</li>
+        </ul>
+        <button @click="addFruit">add</button>
+        <button @click="removeFruit">remove</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                fruits: ['apple', 'banana', 'orange']
+            },
+            methods: {
+                addFruit: function () {
+                    this.fruits.push('New Fruit');
+                },
+                removeFruit: function () {
+                    this.fruits.pop();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
